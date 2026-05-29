@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREPSA - Digital School Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-graduation-cap text-blue-600 text-2xl"></i>
+                <span class="text-2xl font-bold text-blue-600">PREPSA</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="#programs" class="text-gray-700 hover:text-blue-600 transition">Programs</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </div>
+
+            <!-- Auth Buttons -->
+            <div class="flex space-x-4">
+                <button onclick="openLoginModal()" class="px-4 py-2 text-blue-600 hover:bg-blue-50 rounded transition">Login</button>
+                <button onclick="openSignupModal()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Sign Up</button>
+                <button id="menuToggle" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-4 py-4 space-y-4">
+            <a href="#home" class="block text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#about" class="block text-gray-700 hover:text-blue-600">About</a>
+            <a href="#programs" class="block text-gray-700 hover:text-blue-600">Programs</a>
+            <a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-4">Welcome to PREPSA</h1>
+            <p class="text-xl mb-8">Your Complete Digital School Platform for Education Excellence</p>
+            <div class="flex justify-center space-x-4">
+                <button onclick="openSignupModal()" class="px-8 py-3 bg-white text-blue-600 font-bold rounded hover:bg-gray-100 transition">Get Started</button>
+                <button onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})" class="px-8 py-3 border-2 border-white text-white rounded hover:bg-white hover:text-blue-600 transition">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Platform Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="p-6 bg-blue-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-users text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Multi-User Access</h3>
+                    <p class="text-gray-600">Admin, Teachers, Learners, and Parents on one platform</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="p-6 bg-green-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-book text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Course Management</h3>
+                    <p class="text-gray-600">Teachers can create, manage, and deliver courses easily</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="p-6 bg-purple-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-laptop text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">CBT System</h3>
+                    <p class="text-gray-600">Computer-Based Testing with instant feedback</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="p-6 bg-orange-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-chart-bar text-3xl text-orange-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Analytics Dashboard</h3>
+                    <p class="text-gray-600">Track performance with detailed reports and insights</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="p-6 bg-red-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-handshake text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Sponsorship Management</h3>
+                    <p class="text-gray-600">Manage sponsors and school partnerships</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="p-6 bg-teal-50 rounded-lg hover:shadow-lg transition">
+                    <i class="fas fa-mobile-alt text-3xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Mobile Responsive</h3>
+                    <p class="text-gray-600">Access from any device, anytime, anywhere</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Available Programs</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <i class="fas fa-book-open text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Core Subjects</h3>
+                    <p class="text-gray-600 mb-4">Mathematics, English, Sciences</p>
+                    <button onclick="alert('More info coming soon!')" class="text-blue-600 font-semibold hover:underline">Learn More →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <i class="fas fa-code text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Technology</h3>
+                    <p class="text-gray-600 mb-4">Programming, Web Design, IT</p>
+                    <button onclick="alert('More info coming soon!')" class="text-green-600 font-semibold hover:underline">Learn More →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <i class="fas fa-paint-brush text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Arts & Humanities</h3>
+                    <p class="text-gray-600 mb-4">History, Languages, Arts</p>
+                    <button onclick="alert('More info coming soon!')" class="text-purple-600 font-semibold hover:underline">Learn More →</button>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+                    <i class="fas fa-flask text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Laboratories</h3>
+                    <p class="text-gray-600 mb-4">Practical Science Training</p>
+                    <button onclick="alert('More info coming soon!')" class="text-orange-600 font-semibold hover:underline">Learn More →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Contact Info -->
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-2xl text-blue-600 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Location</h3>
+                                <p class="text-gray-600">123 Education Street, Learning City, LC 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone text-2xl text-blue-600 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Phone</h3>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope text-2xl text-blue-600 mt-1"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-800">Email</h3>
+                                <p class="text-gray-600">info@prepsa.edu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" class="space-y-4" onsubmit="handleContactSubmit(event)">
+                    <input type="text" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                    <input type="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                    <input type="text" placeholder="Subject" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                    <textarea placeholder="Your Message" rows="5" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600"></textarea>
+                    <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4">About PREPSA</h4>
+                    <p class="text-gray-400 text-sm">Your trusted digital school platform for modern education.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">About</a></li>
+                        <li><a href="#" class="hover:text-white">Programs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="text-gray-400 text-sm space-y-2">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 PREPSA Digital School Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 w-96 shadow-lg">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Login</h2>
+                <button onclick="closeLoginModal()" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">User Type</label>
+                    <select id="userType" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                        <option value="">Select User Type</option>
+                        <option value="admin">Admin</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="learner">Learner/Student</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+                <input type="email" id="loginEmail" placeholder="Email" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <input type="password" id="loginPassword" placeholder="Password" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 transition">Login</button>
+                <p class="text-center text-gray-600">Don't have an account? <a href="#" onclick="openSignupModal()" class="text-blue-600 font-semibold">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto">
+        <div class="bg-white rounded-lg p-8 w-96 shadow-lg my-8">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Create Account</h2>
+                <button onclick="closeSignupModal()" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <form id="signupForm" onsubmit="handleSignup(event)" class="space-y-4">
+                <input type="text" placeholder="Full Name" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <input type="email" placeholder="Email" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Signing Up As</label>
+                    <select required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                        <option value="">Select Role</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="learner">Learner/Student</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+                <input type="password" placeholder="Password" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <input type="password" placeholder="Confirm Password" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-blue-600">
+                <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded font-bold hover:bg-blue-700 transition">Create Account</button>
+                <p class="text-center text-gray-600">Already have an account? <a href="#" onclick="openLoginModal()" class="text-blue-600 font-semibold">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
